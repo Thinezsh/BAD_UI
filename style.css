@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('path/DISTGRG.ttf') format('ttf'),
+    url('path/to/DISTGRG.ttf') format('ttf');
+}
+    
+@keyframes rotateEl {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+@keyframes pop {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@keyframes bounce {
+    from {
+        transform:translateY(-50px);
+    }
+    50% {
+        transform:translateY(50px);
+    }
+    to {
+        transform:translateY(-50px);
+    }
+}
+html {
+    min-height:2vh;
+    font-size:4em;
+}
+body {
+    height:100%;
+    margin:0px;
+    font-family: 'MyCustomFont', Impact;
+    background-color:black;
+}
+dialog {
+    position:absolute;
+    z-index:999;
+    top:50%;
+    left:50%;
+    width:70%;
+    height:70%;
+    background-color:silver;
+    transform:translate(-50%, -50%);
+    background-image:url("data/OIP.jpg");
+}
+#oui {
+    position:absolute;
+    bottom:0px;left:0px;
+    width:100%;
+    height:30%;
+    background-color:green;
+}
+#non {
+    position:absolute;
+    top:10%;left:10%;
+    transition:all 0.2s ease-in-out;
+    background-color:green;
+}
+header {
+    background-color:red;
+}
+header h1 {
+    font-size:2.5em;
+    /*text-shadow:blue 10px 10px;*/
+}
+nav {
+    background-color:blue;
+}
+main {
+    border-radius:20px;
+    background-color:yellow;
+}
+aside {
+    position:absolute;
+    right:0px;
+    display:flex;
+    justify-content:center;
+    background-color:green;
+}
+aside ul {
+    position:relative;
+    width:200px;
+    height:200px;
+    animation:rotateEl 5s infinite linear;
+    /*background-color:yellow;*/
+}
+aside ul li {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:135px;
+    font-size:0.5em;
+    background-color:pink;
+}
+figure {
+    position:relative;
+    border:7px double blue;
+}
+figure div{
+    position:absolute;
+    top:0%;left:50%;
+    width:253px;height:197px;
+    transform:translate(-50%, 0%);
+    mix-blend-mode: difference;
+    animation:pop 100ms infinite linear;
+    background-color:pink;
+}
+figure img {
+    margin:auto;
+}
+figure p {
+    display:block;
+    text-align:right;
+    font-size:0.5em;
+}
+figure img {
+    display:block;
+}
+article ul {
+    display:flex;
+    justify-content:space-around;
+}
+article ul li {
+    animation:bounce 1000ms infinite ease-in-out;
+}
